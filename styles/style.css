@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #121316;
+}
+:root{
+    --color-one: #EDF1D6;
+    --color-two: #121316;
+    --color-three: #709974;
+    --color-four: #283624;
+}
+a{
+    text-decoration: none;
+}
+
+.header{
+
+    width: 100%;
+    background-color: var(--color-four);
+    display: flex;
+    gap: 4rem;
+    padding: 2%;
+    align-items: center;
+    
+}
+.perfil_menu{
+    height: 60px;
+    width: auto;
+    border-radius: 230px;
+    border: 2px solid ;
+}
+.menu{
+    
+}
+.menu_list{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+
+}
+.menu_list_iten{
+    color: var(--color-one);
+    font-size: 24px ;
+    
+}
+.apresentacao{
+    background-image: url(/assets/pexels-lukas-574071.jpg);
+    background-size: cover;
+    height: auto;
+    color: var(--color-one);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8%;
+    gap: 2rem;
+}
+.apresentacao_links{
+    display: flex;
+    justify-content: center;
+    flex-direction: column ;
+    gap: 2rem;
+    height: 300px;
+    border-right: 1px solid var(--color-one);
+    padding-right: 1rem ;
+}
+.apresentacao_textarea{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-height: 300px;
+}
+.apresentacao_foto{
+    height: 15rem;
+    border-radius: 8px;
+}
