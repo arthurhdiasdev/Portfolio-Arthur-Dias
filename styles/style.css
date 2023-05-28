@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Krona+One&family=Montserrat:wght@300;400;600;700&family=Oxygen:wght@300&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -38,17 +41,18 @@ a{
 .menu_list{
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
 
 }
 .menu_list_iten{
     color: var(--color-one);
     font-size: 24px ;
+    font-family: "Krona One";
+    font-weight: 400px;
     
 }
 .apresentacao{
-    background-image: url(/assets/pexels-lukas-574071.jpg);
-    background-size: cover;
+    background-color: #121316;
     height: auto;
     color: var(--color-one);
     display: flex;
@@ -66,13 +70,57 @@ a{
     border-right: 1px solid var(--color-one);
     padding-right: 1rem ;
 }
+.apresentacao_links_link{
+    background-color: var(--color-one);
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid var(--color-four);
+    color: var(--color-one);
+}
 .apresentacao_textarea{
     display: flex;
     flex-direction: column;
     gap: 2rem;
     max-height: 300px;
+    justify-content: center;
+    
 }
+.apresentacao_textarea h1{
+    font-family: 'Krona one';
+    font-size: 30px;
+}
+.apresentacao_textarea p{
+    font-family: "oxygen";
+    font-size: 20px;
+}
+
 .apresentacao_foto{
     height: 15rem;
-    border-radius: 8px;
+    border-radius: 230px;
+    border: 2px solid black;
+}
+
+@media (max-width: 1080px){
+   .apresentacao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 4rem;
+   }
+   .apresentacao_links{
+    flex-direction: row ;
+    gap: 2rem;
+    height: 100px;
+    width: 100%;
+    border-bottom: 1px solid var(--color-one);
+    border-right: transparent ;
+    margin-bottom: 1rem ;
+   }
+}
+@media (max-width: 800px){
+
 }
