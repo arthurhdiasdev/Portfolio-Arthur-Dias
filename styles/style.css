@@ -18,38 +18,19 @@ body{
 a{
     text-decoration: none;
 }
-
 .header{
-
     width: 100%;
     background-color: var(--color-four);
-    display: flex;
-    gap: 4rem;
-    padding: 2%;
-    align-items: center;
-    
 }
+.header nav{
+    width: inherit;
+    height: inherit;
+    padding: 2rem;}
 .perfil_menu{
     height: 60px;
     width: auto;
     border-radius: 230px;
     border: 2px solid ;
-}
-.menu{
-    
-}
-.menu_list{
-    list-style: none;
-    display: flex;
-    gap: 3rem;
-
-}
-.menu_list_iten{
-    color: var(--color-one);
-    font-size: 24px ;
-    font-family: "Krona One";
-    font-weight: 400px;
-    
 }
 .apresentacao{
     background-color: #121316;
@@ -71,13 +52,7 @@ a{
     padding-right: 1rem ;
 }
 .apresentacao_links_link{
-    background-color: var(--color-one);
-    height: 2.5rem;
-    width: 2.5rem;
-    border-radius: 20px;
     text-align: center;
-    border: 2px solid var(--color-four);
-    color: var(--color-one);
 }
 .apresentacao_textarea{
     display: flex;
