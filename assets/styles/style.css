@@ -16,10 +16,10 @@ body{
     font-family: 'inter', sans-serif;
 }
 :root{
-    --color-one: #e6e6e6;
-    --color-two: #60f1a9;
-    --color-three: #4a74ce;
-    --color-four: #0c0a04;
+    --color-one: #000000;
+    --color-two: #287e53;
+    --color-three: #ffffff;
+    --color-four: #00271c;
 }
 .destaque{
     color: var(--color-two);
@@ -28,12 +28,15 @@ a{
     text-decoration: none;
 }
 header{
-    background-image: linear-gradient(to right, var(--color-one), var(--color-three));
+    background-image: linear-gradient(to right, var(--color-two), var(--color-one));
     border-bottom: 2px solid var(--color-one);
+    
+
 }
 .nav-bar{
     height: inherit;
     display: flex;
+    align-items: center;
     flex-direction: row;
     justify-content: space-between;
     padding: 1% 5%;
@@ -41,20 +44,37 @@ header{
 .nav-bar h1{
     font-family: 'bebas neue', sans-serif;
     text-transform: uppercase;
-    color: var(--color-three);
+    color: var(--color-one);
+}
+.nav-bar-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-bar-list a{
+    text-decoration: none;
+    color: var(--color-one);
+    text-transform: uppercase;
+    
+}
+.nav-bar-list a:hover{
+
+
 }
 main{
-    background-color: var(--color-three);
+    background-color: var(--color-four);
     height: 80vh;
 }
 .capa{
-    color: var(--color-one);
     padding:  0 10%;
     display: flex;
     gap: 10%;
     align-items: center;
-    padding: 10% 5%;
-    
+    justify-content: space-evenly;
+    padding: 10% 5%;  
 }
 .capa-contatos{
     display: flex;
@@ -67,25 +87,27 @@ main{
 .capa-conteudo{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    text-align: start;
     
 }
 .capa-conteudo h1{
+    color: var(--color-three);
     text-transform: uppercase;
     font-family: 'bebas neue', sans-serif;
     font-size: 80px;
 }
 .capa-conteudo h2{
+    color: var(--color-two);
     font-weight: 600;
     font-size: 20px;
     text-transform: uppercase;
 }
 .capa-conteudo p {
+    color: var(--color-one);
     font-size: 24px;
 }
 .capa-fotos{
     display: flex;
-    justify-content: center;
     align-items: center; 
 }
 .fotos-area{
@@ -94,18 +116,19 @@ main{
     align-items: center;
     height: 30vh;
     width: 30vh;
-    border-radius: 77px;
-    background: #4a74ce;
-    box-shadow:  -16px -16px 32px #324f8c,16px 16px 32px #6299ff;
+    border-radius: 50px;
+    background: #00271c;
+    box-shadow:  -20px -20px 36px #00100c,20px 20px 36px #003e2c;
 
 }
 .fotos-area img{
    height: 28vh;
-   border-radius: 77px;
+   border-radius: 50px;
 }
 footer{
-    padding-top: 1%;
+    padding-top: 2.3%;
     text-align: center;
     text-transform: uppercase;
-    color: var(--color-three);
+    color: var(--color-one);
+    background-image: linear-gradient(to right, var(--color-one), var(--color-two));
 }
