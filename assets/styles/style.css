@@ -9,66 +9,62 @@
     box-sizing: border-box;
     font-family: 'inter', sans-serif;
 }
-html, body{
-    height: 100%;
-}
 body{
     font-family: 'inter', sans-serif;
+    position: relative;
 }
 :root{
     --color-one: #000000;
     --color-two: #287e53;
     --color-three: #ffffff;
     --color-four: #00271c;
+    --color-five:#47ad75;
 }
 .destaque{
-    color: var(--color-two);
+    color: var(--color-five);
 }
 a{
     text-decoration: none;
 }
-header{
-    background-image: linear-gradient(to right, var(--color-two), var(--color-one));
-    border-bottom: 2px solid var(--color-one);
-    
 
-}
-.nav-bar{
-    height: inherit;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1% 5%;
-}
-.nav-bar h1{
-    font-family: 'bebas neue', sans-serif;
+#logo{
     text-transform: uppercase;
-    color: var(--color-one);
+    font-size: 2rem;
+    font-family: 'bebas neue', sans-serif;
 }
-.nav-bar-list{
+#header{
+    box-sizing: border-box;
+    padding: 1rem;
     display: flex;
+    height: 70px;
     align-items: center;
-    justify-content: space-around;
-    gap: 2rem;
+    justify-content: space-between;
+    background-color: var(--color-two);
+    
+}
+#menu{
+    display: flex;
+    gap: .5rem;
     list-style: none;
 }
 
-.nav-bar-list a{
-    text-decoration: none;
-    color: var(--color-one);
+#menu a{
     text-transform: uppercase;
-    
+    display: block;
+    padding: .5rem;
+    color: var(--color-three);
 }
-.nav-bar-list a:hover{
 
 
+#btn-mobile{
+    display: none;
 }
 main{
     background-color: var(--color-four);
-    height: 80vh;
+    
 }
 .capa{
+    
     padding:  0 10%;
     display: flex;
     gap: 10%;
@@ -82,12 +78,13 @@ main{
     gap: 1rem;
 }
 .capa-contatos a{
-   
+   font-size: 36px;
 }
 .capa-conteudo{
     display: flex;
     flex-direction: column;
     text-align: start;
+    gap: 1rem;
     
 }
 .capa-conteudo h1{
@@ -103,7 +100,7 @@ main{
     text-transform: uppercase;
 }
 .capa-conteudo p {
-    color: var(--color-one);
+    color: var(--color-two);
     font-size: 24px;
 }
 .capa-fotos{
@@ -126,9 +123,102 @@ main{
    border-radius: 50px;
 }
 footer{
-    padding-top: 2.3%;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    padding: .5rem;
     text-align: center;
-    text-transform: uppercase;
-    color: var(--color-one);
-    background-image: linear-gradient(to right, var(--color-one), var(--color-two));
+    font-weight: bold;
+    color: var(--color-three);
+    background-color: var(--color-two);
+}
+
+@media  screen and (max-width: 730px) {
+    #btn-mobile{
+        display: block;
+    }
+    #menu{
+        height: 0px;
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        right: 0px;
+        display: block;
+        background-color: var(--color-two);
+        z-index: 1000;
+        transition: .6s;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+    #menu a{
+        padding:  1rem 0;
+        margin:  0 1rem;
+        border-bottom:  2px solid rgba(0, 0, 0, .05);
+    }
+    #nav.active #menu{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+
+    }
+    #nav.active #menu a:hover{
+        background-color: #4aad7c;
+    }
+    
+    #btn-mobile{
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+    #hamburguer{
+        color: var(--color-one);
+        width: 20px;
+        border-top: 2px solid;
+
+    }
+    #hamburguer::after,  #hamburguer::before{
+        margin-top: 5px;
+        width: 20px;
+        height: 2px;
+        background-color: currentColor;
+        content: '';
+        display: block;
+        transition: .3s;
+        position: relative;
+    }
+    #nav.active #hamburguer{
+        border-top-color: transparent;
+    }
+    #nav.active #hamburguer::before{
+        transform: rotate(135deg);
+    }
+    #nav.active #hamburguer::after{
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+ 
+
+
+
+
+
+    .capa{
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+    }
+    .capa-conteudo{
+        text-align: center;
+    }
+    .capa-contatos{
+        flex-direction: row;
+        gap: 2rem;
+    }
+
 }
