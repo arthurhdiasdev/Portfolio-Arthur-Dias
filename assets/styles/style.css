@@ -11,7 +11,6 @@
 }
 body{
     font-family: 'inter', sans-serif;
-    position: relative;
 }
 :root{
     --color-one: #000000;
@@ -25,44 +24,59 @@ body{
 }
 a{
     text-decoration: none;
+    color: #ffffff;
+    opacity: 70%;
 }
-
-#logo{
+a:hover{
+    opacity: 100%;
+}
+.logo{
+    font-size: 40px;
     text-transform: uppercase;
-    font-size: 2rem;
-    font-family: 'bebas neue', sans-serif;
+    letter-spacing: 4px;
+    font-family: 'bebas neue';
 }
-#header{
-    box-sizing: border-box;
-    padding: 1rem;
+nav{
     display: flex;
-    height: 70px;
+    justify-content: space-around;
     align-items: center;
-    justify-content: space-between;
-    background-color: var(--color-two);
-    
+    font-family: 'bebas neue', system-ui, -apple-system, Arial, Helvetica, sans-serif ;
+    background: #003e2c;
+    height: 10vh;
 }
-#menu{
-    display: flex;
-    gap: .5rem;
+.nav-list{
     list-style: none;
+    display: flex;
+}
+.nav-list li{
+    letter-spacing: 3px;
+    margin-left: 32px;
 }
 
-#menu a{
-    text-transform: uppercase;
-    display: block;
-    padding: .5rem;
-    color: var(--color-three);
-}
-
-
-#btn-mobile{
+.mobile-menu{
     display: none;
+    cursor: pointer;
 }
+.mobile-menu div{
+    width: 32px;
+    height: 2px;
+    background:#fff;
+    margin: 8px;
+}
+
 main{
     background-color: var(--color-four);
     
 }
+footer{
+    width: 100%;
+    padding: 1.4rem;
+    text-align: center;
+    font-weight: bold;
+    color: var(--color-three);
+    background-color: var(--color-two);
+}
+/* capa portfolio*/
 .capa{
     
     padding:  0 10%;
@@ -102,6 +116,7 @@ main{
 .capa-conteudo p {
     color: var(--color-two);
     font-size: 24px;
+  
 }
 .capa-fotos{
     display: flex;
@@ -122,92 +137,91 @@ main{
    height: 28vh;
    border-radius: 50px;
 }
-footer{
-    position: absolute;
-    width: 100%;
-    top: 100%;
-    padding: .5rem;
-    text-align: center;
-    font-weight: bold;
-    color: var(--color-three);
-    background-color: var(--color-two);
+/*about*/
+
+.about{
+    padding:  0 10%;
+    display: flex;
+    gap: 10%;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10% 5%;  
+}
+.about-textarea{
+    display: flex; 
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media   (max-width: 999px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-list{
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background-color: #003e2c;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+    .nav-list li{
+        margin-left: 0;
+        opacity: 0;
+    }
+    .mobile-menu{
+        display: block;
+    }
+    .nav-list.active {
+        transform: translateX(0);
+      }
+      
+      @keyframes navLinkFade {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      .mobile-menu.active .line1 {
+        transform: rotate(-45deg) translate(-8px, 8px);
+      }
+      
+      .mobile-menu.active .line2 {
+        opacity: 0;
+      }
+      
+      .mobile-menu.active .line3 {
+        transform: rotate(45deg) translate(-5px, -7px);
+      }
 }
 
 @media  screen and (max-width: 730px) {
-    #btn-mobile{
-        display: block;
-    }
-    #menu{
-        height: 0px;
-        position: absolute;
-        width: 100%;
-        top: 70px;
-        right: 0px;
-        display: block;
-        background-color: var(--color-two);
-        z-index: 1000;
-        transition: .6s;
-        visibility: hidden;
-        overflow-y: hidden;
-    }
-    #menu a{
-        padding:  1rem 0;
-        margin:  0 1rem;
-        border-bottom:  2px solid rgba(0, 0, 0, .05);
-    }
-    #nav.active #menu{
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        height: calc(100vh - 70px);
-        visibility: visible;
-        overflow-y: auto;
-
-    }
-    #nav.active #menu a:hover{
-        background-color: #4aad7c;
-    }
-    
-    #btn-mobile{
-        display: flex;
-        padding: .5rem 1rem;
-        font-size: 1rem;
-        border: none;
-        background: none;
-        cursor: pointer;
-    }
-    #hamburguer{
-        color: var(--color-one);
-        width: 20px;
-        border-top: 2px solid;
-
-    }
-    #hamburguer::after,  #hamburguer::before{
-        margin-top: 5px;
-        width: 20px;
-        height: 2px;
-        background-color: currentColor;
-        content: '';
-        display: block;
-        transition: .3s;
-        position: relative;
-    }
-    #nav.active #hamburguer{
-        border-top-color: transparent;
-    }
-    #nav.active #hamburguer::before{
-        transform: rotate(135deg);
-    }
-    #nav.active #hamburguer::after{
-        transform: rotate(-135deg);
-        top: -7px;
-    }
- 
-
-
-
-
-
     .capa{
         display: flex;
         flex-direction: column;
@@ -219,6 +233,9 @@ footer{
     .capa-contatos{
         flex-direction: row;
         gap: 2rem;
+    }
+    .capa-conteudo p {
+        width: auto;
     }
 
 }
