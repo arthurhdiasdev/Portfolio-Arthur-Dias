@@ -17,7 +17,7 @@ body{
     --color-two: #287e53;
     --color-three: #ffffff;
     --color-four: #00271c;
-    --color-five:#47ad75;
+    --color-five: #003e2c;
 }
 .destaque{
     color: var(--color-five);
@@ -31,6 +31,7 @@ a:hover{
     opacity: 100%;
 }
 .logo{
+    opacity: 100%;
     font-size: 40px;
     text-transform: uppercase;
     letter-spacing: 4px;
@@ -41,7 +42,7 @@ nav{
     justify-content: space-around;
     align-items: center;
     font-family: 'bebas neue', system-ui, -apple-system, Arial, Helvetica, sans-serif ;
-    background: #003e2c;
+    background: var(--color-five);
     height: 10vh;
 }
 .nav-list{
@@ -74,11 +75,11 @@ footer{
     text-align: center;
     font-weight: bold;
     color: var(--color-three);
-    background-color: var(--color-two);
+    background-color: var(--color-five);
 }
 /* capa portfolio*/
 .capa{
-    
+    background-image: url(/assets/img/free-photo-of-biologia-planta-diagrama-desenho-tecnico.jpeg);
     padding:  0 10%;
     display: flex;
     gap: 10%;
@@ -86,19 +87,27 @@ footer{
     justify-content: space-evenly;
     padding: 10% 5%;  
 }
+
 .capa-contatos{
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 3rem;
+    background-color: var(--color-four);
+    padding: 2rem;
+    border-radius: 50px;
 }
 .capa-contatos a{
    font-size: 36px;
+   opacity: 100%;
 }
 .capa-conteudo{
     display: flex;
     flex-direction: column;
     text-align: start;
     gap: 1rem;
+    background-color: var(--color-four);
+    padding: 2rem 4rem;
+    border-radius: 50px;
     
 }
 .capa-conteudo h1{
@@ -106,6 +115,7 @@ footer{
     text-transform: uppercase;
     font-family: 'bebas neue', sans-serif;
     font-size: 80px;
+    letter-spacing: 1px;
 }
 .capa-conteudo h2{
     color: var(--color-two);
@@ -121,6 +131,9 @@ footer{
 .capa-fotos{
     display: flex;
     align-items: center; 
+    background-color: var(--color-four);
+    padding: 2rem;
+    border-radius: 50px;
 }
 .fotos-area{
     display: grid;
@@ -134,25 +147,80 @@ footer{
 
 }
 .fotos-area img{
-   height: 28vh;
+   height: 20vh;
    border-radius: 50px;
 }
-/*about*/
-
-.about{
-    padding:  0 10%;
+/*Sobre mim*/
+.section-sobre{
     display: flex;
-    gap: 10%;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 10% 5%;  
-}
-.about-textarea{
-    display: flex; 
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    padding-bottom: 1rem;
+    margin-bottom: 3rem;
+}
+.sobre-textos{
+    padding: 2vh 16vw;
+}
+.sobre-textos h2{
+    color: var(--color-three);
+    text-transform: uppercase;
+    font-family: 'bebas neue', sans-serif;
+    font-size: 60px;
+    letter-spacing: 1px;
+}
+.sobre-textos p{
+    font-size: 24px;
+    color: var(--color-two);
+}
+#baixar-curriculo{
+    margin-top: 2rem;
+}
+#baixar-curriculo a{
+    cursor: pointer;
+    opacity: 70%;
+    font-size: 18px;
+    border: 2px solid var(--color-three);
+    border-radius: 15px;
+    padding: 1rem;
+}
+#baixar-curriculo a:hover{
+    opacity: 100%;
+    transition: 1s;
 }
 
 
+
+/*Projetos*/
+.section-projetos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+.container-projetos{
+    display: grid;
+    grid-auto-flow: column ;
+    scroll-behavior: auto;
+    gap: 1.2rem;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 3rem ;
+    margin-bottom: 4rem;
+}
+.projeto{
+   
+}
 
 
 
@@ -222,6 +290,7 @@ footer{
 }
 
 @media  screen and (max-width: 730px) {
+    /*capa*/
     .capa{
         display: flex;
         flex-direction: column;
@@ -237,5 +306,8 @@ footer{
     .capa-conteudo p {
         width: auto;
     }
-
+    /*sobre mim*/
+    .sobre-textos{
+        text-align: center;
+    }
 }
