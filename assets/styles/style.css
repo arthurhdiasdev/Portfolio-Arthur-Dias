@@ -11,6 +11,7 @@
 }
 body{
     font-family: 'inter', sans-serif;
+    overflow-x: hidden;
 }
 :root{
     --color-one: #000000;
@@ -38,6 +39,7 @@ a:hover{
     font-family: 'bebas neue';
 }
 nav{
+    animation: mudaBackground 5s infinite;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -52,7 +54,20 @@ nav{
 .nav-list li{
     letter-spacing: 3px;
     margin-left: 32px;
+    padding:  0.3rem 0.7rem;
+    border-radius: 9px;
+    border: 2px solid var(--color-three);
+    text-transform: uppercase;
 }
+.nav-list li:hover{
+    border: 2px solid var(--color-three);
+    color: var(--color-three);
+    transition: ease 1s;
+    transform: scale(1.1);
+    background-color: #287e53;
+    
+}
+
 
 .mobile-menu{
     display: none;
@@ -80,14 +95,13 @@ footer{
 /* capa portfolio*/
 .capa{
     background-image: url(/assets/img/free-photo-of-biologia-planta-diagrama-desenho-tecnico.jpeg);
-    padding:  0 10%;
+    background-size: cover;
     display: flex;
     gap: 10%;
     align-items: center;
     justify-content: space-evenly;
     padding: 10% 5%;  
 }
-
 .capa-contatos{
     display: flex;
     flex-direction: column;
@@ -107,7 +121,8 @@ footer{
     gap: 1rem;
     background-color: var(--color-four);
     padding: 2rem 4rem;
-    border-radius: 50px;
+    border-radius: 0 50px 50px 0;
+    border-left: 1rem solid var(--color-three);
     
 }
 .capa-conteudo h1{
@@ -116,17 +131,14 @@ footer{
     font-family: 'bebas neue', sans-serif;
     font-size: 80px;
     letter-spacing: 1px;
+    border-bottom: 2px solid var(--color-three);
 }
 .capa-conteudo h2{
     color: var(--color-two);
     font-weight: 600;
     font-size: 20px;
     text-transform: uppercase;
-}
-.capa-conteudo p {
-    color: var(--color-two);
-    font-size: 24px;
-  
+    
 }
 .capa-fotos{
     display: flex;
@@ -189,53 +201,63 @@ footer{
     opacity: 100%;
     transition: 1s;
 }
+@keyframes mudaBackground{
+    0%{
+        background-color: var(--color-four);
+    }
+    50%{
+        background-color: var(--color-five);
+    }
+    100%{
+        background-color: var(--color-one);
+    }
+
+}
 
 
-
-/*Projetos*/
-.section-projetos{
+/*Tecnologias*/
+.section-tecnologias{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    padding: 3rem;
 }
-
-
-
-
-
-
-
-
-.container-projetos{
-    display: grid;
-    grid-auto-flow: column ;
-    scroll-behavior: auto;
-    gap: 1.2rem;
-    overflow-y: auto;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    padding: 3rem ;
-    margin-bottom: 4rem;
+.section-tecnologias h1{
+    text-transform: uppercase;
+    font-family: 'bebas neue', Arial, Helvetica, sans-serif;
+    font-size: 60px;
+    color: var(--color-three);
+    letter-spacing: 1px;
+    padding-bottom: 2rem ;
 }
-.projeto{
-   
+.tecnologias{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+    max-width: 95%;
+    background-color: var(--color-five);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: -20px -20px 36px #00100c,20px 20px 36px #003e2c;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.tecnologia{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 8rem;
+    height: 8rem;
+    color: var(--color-three);
+    border-radius: 8px;
+}
+.tecnologia i{
+    font-size: 40px;
+}
 
 @media   (max-width: 999px){
     body{
@@ -298,10 +320,25 @@ footer{
     }
     .capa-conteudo{
         text-align: center;
+        border-radius: 15px;
+        background-color:rgba( 0, 39, 28, 0.8);
+        letter-spacing: 3px;
+    }
+    .capa-conteudo h1{
+        font-size: 60px;
     }
     .capa-contatos{
+        justify-content: center;
         flex-direction: row;
-        gap: 2rem;
+        gap: 4rem;
+        width: 80%;
+        padding:  1rem 1rem;
+        background: none;
+    }
+    .capa-contatos a{
+        background-color: var(--color-five);
+        padding: 1rem;
+        border-radius: 8px;
     }
     .capa-conteudo p {
         width: auto;
